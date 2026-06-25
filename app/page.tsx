@@ -4,14 +4,14 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-brand-900 to-brand-600 text-white py-24 px-4">
+      <section className="bg-gradient-to-br from-brand-900 to-brand-600 text-white py-16 sm:py-24 px-4">
         <div className="max-w-3xl mx-auto text-center">
           {/* Eyebrow / positioning */}
-          <p className="inline-block text-xs font-bold uppercase tracking-widest text-blue-200 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-6">
+          <p className="inline-block text-[11px] sm:text-xs font-bold uppercase tracking-widest text-blue-200 bg-white/10 border border-white/20 rounded-full px-3 sm:px-4 py-1.5 mb-6">
             Your monthly recruiting assistant — not just a profile page
           </p>
 
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.1] sm:leading-[1.05] mb-6">
             The Right Schools.<br />
             The Right Coaches.<br />
             The Right Email.
@@ -46,7 +46,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-20 px-4 bg-white">
+      <section id="how-it-works" className="py-14 sm:py-20 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black text-center text-gray-900 mb-4">
             How RecruitOS Works
@@ -104,7 +104,7 @@ export default function Home() {
       </section>
 
       {/* Why RecruitOS Is Different (Trust) */}
-      <section className="py-20 px-4 bg-brand-900 text-white">
+      <section className="py-14 sm:py-20 px-4 bg-brand-900 text-white">
         <div className="max-w-5xl mx-auto">
           <div className="max-w-2xl mb-14">
             <p className="text-sm font-bold uppercase tracking-widest text-blue-300 mb-3">
@@ -161,7 +161,7 @@ export default function Home() {
       </section>
 
       {/* Problem / Value Props */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-14 sm:py-20 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className="max-w-2xl mx-auto text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
@@ -210,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* For Parents */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-14 sm:py-20 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -275,7 +275,7 @@ export default function Home() {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="py-20 px-4 bg-gray-50">
+      <section id="pricing" className="py-14 sm:py-20 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
             Simple, Transparent Pricing
@@ -320,7 +320,7 @@ export default function Home() {
             </div>
 
             {/* RecruitOS Premium */}
-            <div className="relative flex flex-col rounded-3xl bg-brand-700 text-white p-8 md:p-10 shadow-xl ring-2 ring-brand-500 md:scale-[1.03]">
+            <div className="relative flex flex-col rounded-3xl bg-brand-700 text-white p-8 md:p-10 shadow-xl ring-2 ring-brand-500 mt-6 md:mt-0 md:scale-[1.03]">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                 <span className="inline-block bg-green-400 text-brand-900 text-xs font-black uppercase tracking-wide px-4 py-1.5 rounded-full shadow">
                   Best for serious recruits
@@ -369,7 +369,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section id="get-started" className="py-20 px-4 bg-brand-900 text-white text-center">
+      <section id="get-started" className="py-14 sm:py-20 px-4 bg-brand-900 text-white text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-4xl font-black mb-4">
             Stop Emailing the Wrong Coaches.
