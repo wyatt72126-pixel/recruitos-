@@ -6,26 +6,26 @@ export default function Home() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-brand-900 to-brand-600 text-white py-24 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          {/* Trust line */}
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-300 mb-6">
-            Your monthly college recruiting assistant
+          {/* Eyebrow / positioning */}
+          <p className="inline-block text-xs font-bold uppercase tracking-widest text-blue-200 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-6">
+            Your monthly recruiting assistant — not just a profile page
           </p>
 
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-6">
-            Know Which Schools Fit.<br />
-            Know Who to Contact.<br />
-            Know What to Say.
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.05] mb-6">
+            The Right Schools.<br />
+            The Right Coaches.<br />
+            The Right Email.
           </h1>
 
           <p className="text-lg md:text-xl text-blue-100 max-w-xl mx-auto mb-4 leading-relaxed">
-            Most athletes spend months emailing the wrong coaches at the wrong
-            schools — and never hear back. RecruitOS gives you a clear plan:
-            the right programs, verified coach contacts, and outreach emails
-            written for you.
+            Most athletes don&apos;t know which schools actually fit them, which
+            coaches to contact, or what to say. RecruitOS gives you a clear
+            recruiting plan, verified coach contacts, and outreach you can send today.
           </p>
 
-          <p className="text-sm text-blue-300 mb-10">
-            Every contact is pulled directly from the official athletic staff page — not guessed.
+          {/* Trust subheadline */}
+          <p className="text-sm font-medium text-blue-200 mb-10">
+            Every contact is pulled straight from the official athletic staff page — verified, never guessed.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -33,7 +33,7 @@ export default function Home() {
               href="/#get-started"
               className="bg-white text-brand-700 font-black px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors text-lg"
             >
-              Get My Recruiting Plan →
+              Build My Recruiting Plan →
             </Link>
             <Link
               href="/demo"
