@@ -2,8 +2,14 @@ export interface Coach {
   name: string;
   title: string;
   email: string;
-  twitter: string;
+  /** Optional — omit when the staff page does not list an X/Twitter handle. */
+  twitter?: string;
   staffPageUrl: string;
+  /**
+   * True only when this contact has been confirmed against the school's
+   * official athletic staff page. Sample/demo records use `false`.
+   */
+  verified?: boolean;
 }
 
 export interface School {
@@ -20,7 +26,18 @@ export interface School {
   outreachEmail: string;
 }
 
-// All coach contacts sourced from official athletic staff pages.
+/**
+ * DEMO / SAMPLE DATA
+ * ------------------
+ * The records below are illustrative sample contacts used to demonstrate the
+ * RecruitOS profile layout. They are NOT confirmed live contacts, so each
+ * coach is marked `verified: false`.
+ *
+ * To ship a real athlete profile: replace these with contacts confirmed
+ * against each school's official athletic staff page and set `verified: true`.
+ * The UI surfaces the "Verified from official staff page" label only when a
+ * contact is marked verified.
+ */
 export const schools: School[] = [
   {
     id: "georgia",
