@@ -49,38 +49,56 @@ export default function Home() {
       <section id="how-it-works" className="py-20 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black text-center text-gray-900 mb-4">
-            Here is Exactly What You Get
+            How RecruitOS Works
           </h2>
           <p className="text-center text-gray-500 mb-14 max-w-xl mx-auto">
-            RecruitOS is not a profile builder. It is a monthly recruiting
-            assistant that tells you who to contact, where to go, and what to say.
+            Three steps from where you are now to coaches reading your email.
           </p>
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid gap-6 md:grid-cols-3">
             {[
               {
-                step: "01",
-                title: "Your School List",
-                desc: "We match you to 50 programs based on your sport, stats, GPA, and size preference — schools that are a realistic fit, not a wishlist.",
+                step: "Step 01",
+                title: "Build the athlete profile",
+                desc: "Enter your position, class, GPA, film, stats, location, and recruiting goals. This is the foundation we match against.",
               },
               {
-                step: "02",
-                title: "Verified Coach Contacts",
-                desc: "For your top 5 schools, we pull the actual coach emails and Twitter/X handles from the official athletic staff page. At least 3 contacts per school.",
+                step: "Step 02",
+                title: "Get school matches and verified contacts",
+                desc: "RecruitOS recommends schools that fit you and provides verified coach emails and Twitter/X contacts pulled from official staff pages.",
               },
               {
-                step: "03",
-                title: "Outreach Written for You",
-                desc: "Every coach contact comes with a personalized email you can copy and send. No writing from scratch. No wondering if it sounds right.",
+                step: "Step 03",
+                title: "Send better outreach",
+                desc: "Get ready-to-send email templates and a clear plan for contacting coaches — so your first impression actually lands.",
               },
             ].map((item) => (
-              <div key={item.step} className="flex flex-col gap-3">
-                <span className="text-5xl font-black text-brand-100 leading-none">
+              <div
+                key={item.step}
+                className="flex flex-col rounded-2xl border border-gray-200 bg-white p-7 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <span className="text-xs font-bold uppercase tracking-widest text-brand-500 mb-4">
                   {item.step}
                 </span>
-                <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-gray-500 leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+            <Link
+              href="/#get-started"
+              className="bg-brand-600 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-brand-700 transition-colors text-center"
+            >
+              Start Recruiting Plan →
+            </Link>
+            <Link
+              href="/demo"
+              className="border-2 border-gray-200 text-gray-700 font-semibold px-8 py-3.5 rounded-xl hover:border-gray-300 hover:bg-gray-50 transition-colors text-center"
+            >
+              View Demo Profile
+            </Link>
           </div>
         </div>
       </section>
