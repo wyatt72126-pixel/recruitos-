@@ -112,7 +112,7 @@ export default function HowItWorksPage() {
             straight to Premium.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/pricing" className="bg-white text-brand-700 font-black px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors">
+            <Link href="/onboarding" className="bg-white text-brand-700 font-black px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors">
               Start Premium Plan →
             </Link>
             <Link href="/demo" className="border-2 border-white/60 text-white font-semibold px-8 py-4 rounded-xl hover:border-white hover:bg-white/10 transition-colors">

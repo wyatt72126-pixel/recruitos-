@@ -49,7 +49,7 @@ export default function PremiumSection() {
 
       <div className="flex flex-col sm:flex-row items-center gap-4">
         <Link
-          href="/#get-started"
+          href="/onboarding"
           className="w-full sm:w-auto text-center bg-white text-brand-700 font-black px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors text-lg"
         >
           Start Premium Plan →
