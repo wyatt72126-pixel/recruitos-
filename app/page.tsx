@@ -154,43 +154,95 @@ export default function Home() {
 
       {/* Pricing */}
       <section id="pricing" className="py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
             Simple, Transparent Pricing
           </h2>
-          <p className="text-gray-500 mb-14">
-            One plan. Everything you need to get recruited.
+          <p className="text-gray-500 mb-14 max-w-xl mx-auto">
+            Start with a free demo profile, or get the full recruiting plan with Premium.
           </p>
-          <div className="bg-brand-700 text-white rounded-3xl p-10 md:p-14 shadow-xl max-w-xl mx-auto">
-            <div className="text-sm font-semibold uppercase tracking-widest text-blue-200 mb-2">
-              Premium Edition
+
+          <div className="grid md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto text-left">
+            {/* Free Demo Profile */}
+            <div className="flex flex-col rounded-3xl border border-gray-200 bg-white p-8 md:p-10 shadow-sm">
+              <div className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-2">
+                Free Demo Profile
+              </div>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-5xl font-black text-gray-900">$0</span>
+              </div>
+              <p className="text-gray-500 mb-8">
+                See exactly what a RecruitOS profile looks like before you commit.
+              </p>
+              <ul className="space-y-4 mb-10 flex-1">
+                {[
+                  "Athlete profile preview",
+                  "Example school recommendations",
+                  "Sample coach contact layout",
+                  "Sample outreach email format",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-gray-700">
+                    <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/demo"
+                className="block w-full text-center bg-gray-900 text-white font-bold text-lg py-4 rounded-xl hover:bg-gray-800 transition-colors"
+              >
+                View Demo Profile
+              </Link>
             </div>
-            <div className="text-6xl font-black mb-2">$97</div>
-            <div className="text-blue-200 mb-8">one-time payment</div>
-            <ul className="text-left space-y-4 mb-10">
-              {[
-                "50 personalized school matches",
-                "Verified coach contacts for your top 5 schools (3+ coaches each)",
-                "Real emails & Twitter/X from official staff pages",
-                "Personalized outreach email for every coach",
-                "Recruiting camp & junior day alerts",
-                "Coach contact strategy guide",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <Link
-              href="/#get-started"
-              className="block w-full bg-white text-brand-700 font-black text-lg py-4 rounded-xl hover:bg-blue-50 transition-colors"
-            >
-              Get My Matches →
-            </Link>
+
+            {/* RecruitOS Premium */}
+            <div className="relative flex flex-col rounded-3xl bg-brand-700 text-white p-8 md:p-10 shadow-xl ring-2 ring-brand-500 md:scale-[1.03]">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span className="inline-block bg-green-400 text-brand-900 text-xs font-black uppercase tracking-wide px-4 py-1.5 rounded-full shadow">
+                  Best for serious recruits
+                </span>
+              </div>
+              <div className="text-sm font-bold uppercase tracking-widest text-blue-200 mb-2 mt-2">
+                RecruitOS Premium
+              </div>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-5xl font-black">$20</span>
+                <span className="text-blue-200 font-medium">/month</span>
+              </div>
+              <p className="text-blue-100 mb-8">
+                A real recruiting plan for athletes who are ready to reach out.
+              </p>
+              <ul className="space-y-4 mb-10 flex-1">
+                {[
+                  "50 personalized school matches",
+                  "Verified coach emails and Twitter/X contacts",
+                  "5 priority schools with at least 3 coach contacts each",
+                  "Copy-and-paste outreach emails",
+                  "Camp and junior day opportunity updates",
+                  "Monthly recruiting strategy updates",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/#get-started"
+                className="block w-full text-center bg-white text-brand-700 font-black text-lg py-4 rounded-xl hover:bg-blue-50 transition-colors"
+              >
+                Start Premium Plan →
+              </Link>
+            </div>
           </div>
+
+          <p className="text-gray-400 text-sm mt-8">
+            Cancel anytime. RecruitOS helps you reach coaches — it does not guarantee offers or scholarships.
+          </p>
         </div>
       </section>
 
@@ -204,7 +256,7 @@ export default function Home() {
             Get your school list, your coach contacts, and your outreach emails — all in one place.
           </p>
           <p className="text-blue-400 text-sm mb-10">
-            One-time payment. No subscription. No guesswork.
+            $20/month. Cancel anytime. No guesswork.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
