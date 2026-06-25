@@ -250,7 +250,7 @@ Jordan Mills
     ],
     outreachEmail: `Coach Beck,
 
-I'm Jordan Mills, a 6'2" wide receiver from Marietta, GA (Class of 2026, 3.8 GPA). Coastal's up-tempo passing game is exactly the system I'm looking to play in at the next level.
+I'm Jordan Mills, a 6'2" wide receiver from Marietta, GA (Class of 2026, 3.8 GPA). Coastal's up-tempo passing game is exactly the kind of system I want to play in at the college level.
 
 Season stats: 58 receptions, 912 yards, 11 TDs. Hudl: [Your Hudl Link]
 

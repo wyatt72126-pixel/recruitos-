@@ -3,15 +3,14 @@ import { useState } from "react";
 
 const POSITIONS = [
   "Quarterback", "Running Back", "Wide Receiver", "Tight End",
-  "Offensive Lineman", "Defensive Lineman", "Linebacker",
-  "Cornerback", "Safety", "Kicker / Punter",
-  "Point Guard", "Shooting Guard", "Small Forward",
-  "Power Forward", "Center",
-  "Pitcher", "Catcher", "Infielder", "Outfielder",
+  "Offensive Tackle", "Offensive Guard", "Center",
+  "Defensive End", "Defensive Tackle", "Edge",
+  "Linebacker", "Cornerback", "Safety",
+  "Kicker", "Punter", "Long Snapper", "Athlete",
   "Other",
 ];
 
-const YEARS = ["2025", "2026", "2027", "2028", "2029"];
+const YEARS = ["2025", "2026", "2027", "2028", "2029", "2030"];
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -90,27 +89,25 @@ export default function ContactPage() {
               <div className="grid sm:grid-cols-2 gap-5">
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="athlete" className="text-sm font-semibold text-gray-700">
-                    Athlete name <span className="text-red-500">*</span>
+                    Athlete name <span className="text-gray-400 font-normal">(optional)</span>
                   </label>
                   <input
                     id="athlete"
                     type="text"
-                    required
                     placeholder="Jordan Mills"
                     className="border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                   />
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label htmlFor="gradYear" className="text-sm font-semibold text-gray-700">
-                    Graduation year <span className="text-red-500">*</span>
+                    Graduation year <span className="text-gray-400 font-normal">(optional)</span>
                   </label>
                   <select
                     id="gradYear"
-                    required
                     defaultValue=""
                     className="border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent bg-white"
                   >
-                    <option value="" disabled>Select year</option>
+                    <option value="">Select year</option>
                     {YEARS.map((y) => (
                       <option key={y} value={y}>{y}</option>
                     ))}
@@ -120,15 +117,14 @@ export default function ContactPage() {
 
               <div className="flex flex-col gap-1.5">
                 <label htmlFor="position" className="text-sm font-semibold text-gray-700">
-                  Position <span className="text-red-500">*</span>
+                  Position <span className="text-gray-400 font-normal">(optional)</span>
                 </label>
                 <select
                   id="position"
-                  required
                   defaultValue=""
                   className="border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent bg-white"
                 >
-                  <option value="" disabled>Select position</option>
+                  <option value="">Select position</option>
                   {POSITIONS.map((p) => (
                     <option key={p} value={p}>{p}</option>
                   ))}
@@ -157,6 +153,9 @@ export default function ContactPage() {
 
               <p className="text-xs text-gray-400 text-center">
                 This form is not connected to a backend yet. Your message will not be delivered until the service is fully set up.
+              </p>
+              <p className="text-xs text-gray-400 text-center max-w-lg mx-auto leading-relaxed border-t border-gray-100 pt-4">
+                RecruitOS provides recruiting organization, school research, coach contact information, and outreach support. RecruitOS does not guarantee scholarships, roster spots, offers, coach responses, or admission to any school.
               </p>
             </form>
           )}

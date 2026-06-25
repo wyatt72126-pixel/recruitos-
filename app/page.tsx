@@ -52,7 +52,7 @@ export default function Home() {
             How RecruitOS Works
           </h2>
           <p className="text-center text-gray-500 mb-14 max-w-xl mx-auto">
-            Three steps: build your profile, get your matches and contacts, send your outreach.
+            Build your profile, get your school matches and verified contacts, send your outreach.
           </p>
           <div className="grid gap-6 md:grid-cols-3">
             {[

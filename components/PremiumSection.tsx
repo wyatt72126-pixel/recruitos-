@@ -1,12 +1,11 @@
 import Link from "next/link";
 
 const PREMIUM_FEATURES = [
-  "50 school matches",
-  "5 priority schools with verified coach contacts",
-  "At least 3 coach contacts per priority school",
-  "Verified emails and Twitter/X contacts from official staff pages",
+  "50 personalized school matches",
+  "Verified coach emails and Twitter/X contacts",
+  "5 priority schools with at least 3 coach contacts each",
   "Copy-and-paste outreach emails",
-  "Camp, junior day, and recruiting opportunity updates",
+  "Camp and junior day opportunity updates",
   "Monthly recruiting strategy updates",
 ];
 
