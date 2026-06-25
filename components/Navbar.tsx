@@ -2,6 +2,13 @@
 import Link from "next/link";
 import { useState } from "react";
 
+const NAV_LINKS = [
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Demo Profile", href: "/demo" },
+  { label: "Contact", href: "/contact" },
+];
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -17,17 +24,13 @@ export default function Navbar() {
 
           {/* Desktop */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-            <Link href="/#how-it-works" className="hover:text-brand-600 transition-colors">
-              How It Works
-            </Link>
-            <Link href="/#pricing" className="hover:text-brand-600 transition-colors">
-              Pricing
-            </Link>
-            <Link href="/demo" className="hover:text-brand-600 transition-colors">
-              Demo Profile
-            </Link>
+            {NAV_LINKS.map((l) => (
+              <Link key={l.href} href={l.href} className="hover:text-brand-600 transition-colors">
+                {l.label}
+              </Link>
+            ))}
             <Link
-              href="/#get-started"
+              href="/pricing"
               className="bg-brand-600 text-white px-4 py-2 rounded-lg hover:bg-brand-700 transition-colors"
             >
               Get Started
@@ -51,11 +54,24 @@ export default function Navbar() {
         </div>
 
         {open && (
-          <div className="md:hidden pb-4 flex flex-col gap-3 text-sm font-medium text-gray-600">
-            <Link href="/#how-it-works" onClick={() => setOpen(false)} className="hover:text-brand-600">How It Works</Link>
-            <Link href="/#pricing" onClick={() => setOpen(false)} className="hover:text-brand-600">Pricing</Link>
-            <Link href="/demo" onClick={() => setOpen(false)} className="hover:text-brand-600">Demo Profile</Link>
-            <Link href="/#get-started" onClick={() => setOpen(false)} className="bg-brand-600 text-white px-4 py-2 rounded-lg text-center">Get Started</Link>
+          <div className="md:hidden pb-4 flex flex-col gap-1 text-sm font-medium text-gray-700 border-t border-gray-100 pt-3 mt-0">
+            {NAV_LINKS.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="px-2 py-2.5 rounded-md hover:bg-gray-50 hover:text-brand-600 transition-colors"
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Link
+              href="/pricing"
+              onClick={() => setOpen(false)}
+              className="mt-2 bg-brand-600 text-white px-4 py-3 rounded-lg text-center font-bold"
+            >
+              Get Started
+            </Link>
           </div>
         )}
       </div>

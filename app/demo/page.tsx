@@ -105,9 +105,6 @@ export default function DemoPage() {
 
       </div>
 
-      <footer className="bg-gray-900 text-gray-400 py-8 px-4 text-center text-sm mt-10">
-        <p>© {new Date().getFullYear()} RecruitOS. All rights reserved.</p>
-      </footer>
     </main>
   );
 }
