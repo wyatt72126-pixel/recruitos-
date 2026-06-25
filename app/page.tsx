@@ -209,8 +209,73 @@ export default function Home() {
         </div>
       </section>
 
+      {/* For Parents */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-widest text-brand-500 mb-3">
+                For Parents
+              </p>
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight mb-4">
+                Recruiting Without the Guessing
+              </h2>
+              <p className="text-gray-500 leading-relaxed text-lg mb-6">
+                Recruiting gets confusing fast when a family doesn&apos;t know
+                which schools fit, who to contact, or what to say. RecruitOS
+                organizes the whole process into a clear monthly plan you can
+                actually follow — together.
+              </p>
+              <a
+                href="#how-it-works"
+                className="inline-block bg-brand-600 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-brand-700 transition-colors"
+              >
+                See How It Works
+              </a>
+            </div>
+
+            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8">
+              <ul className="space-y-5">
+                {[
+                  {
+                    title: "Clear school recommendations",
+                    desc: "A focused list of programs that fit your athlete — not a wall of names to sort through.",
+                  },
+                  {
+                    title: "Verified coach contacts",
+                    desc: "Coach contact information drawn from official athletic staff pages.",
+                  },
+                  {
+                    title: "Ready-to-send outreach emails",
+                    desc: "Drafted emails your athlete can review and send — no blank page, no guesswork.",
+                  },
+                  {
+                    title: "Monthly updates",
+                    desc: "New opportunities, camps, and next steps delivered every month.",
+                  },
+                  {
+                    title: "A simple plan families understand",
+                    desc: "One organized process you can follow from start to finish, together.",
+                  },
+                ].map((item) => (
+                  <li key={item.title} className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <div>
+                      <div className="font-bold text-gray-900">{item.title}</div>
+                      <div className="text-gray-500 text-sm leading-relaxed">{item.desc}</div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing */}
-      <section id="pricing" className="py-20 px-4 bg-white">
+      <section id="pricing" className="py-20 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
             Simple, Transparent Pricing
