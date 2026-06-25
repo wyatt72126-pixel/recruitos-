@@ -264,6 +264,12 @@ export default function OnboardingPage() {
               This form is not connected to a backend yet. Your profile will not
               be stored or sent until the service is fully set up.
             </p>
+            <p className="text-xs text-gray-400 text-center max-w-2xl leading-relaxed border-t border-gray-200 pt-4 mt-1">
+              RecruitOS provides recruiting organization, school research, coach
+              contact information, and outreach support. RecruitOS does not
+              guarantee scholarships, roster spots, offers, coach responses, or
+              admission to any school.
+            </p>
           </div>
         </form>
       </section>

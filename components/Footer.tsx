@@ -50,11 +50,15 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-gray-600">
-          <p>© {new Date().getFullYear()} RecruitOS. All rights reserved.</p>
-          <p>
-            RecruitOS helps athletes reach coaches. It does not guarantee
-            offers or scholarships.
+        <div className="border-t border-gray-800 pt-6 flex flex-col gap-4">
+          <p className="text-xs text-gray-500 leading-relaxed max-w-3xl">
+            RecruitOS provides recruiting organization, school research, coach
+            contact information, and outreach support. RecruitOS does not
+            guarantee scholarships, roster spots, offers, coach responses, or
+            admission to any school.
+          </p>
+          <p className="text-xs text-gray-600">
+            © {new Date().getFullYear()} RecruitOS. All rights reserved.
           </p>
         </div>
       </div>

@@ -125,9 +125,15 @@ export default function PricingPage() {
           </div>
         </div>
 
-        <p className="text-gray-400 text-sm mt-8 text-center max-w-xl mx-auto">
-          Cancel anytime. RecruitOS helps you reach coaches — it does not guarantee offers or scholarships.
-        </p>
+        <div className="mt-8 max-w-2xl mx-auto text-center">
+          <p className="text-gray-500 text-sm font-medium mb-2">Cancel anytime.</p>
+          <p className="text-gray-400 text-xs leading-relaxed">
+            RecruitOS provides recruiting organization, school research, coach
+            contact information, and outreach support. RecruitOS does not
+            guarantee scholarships, roster spots, offers, coach responses, or
+            admission to any school.
+          </p>
+        </div>
       </section>
 
       {/* FAQ */}
