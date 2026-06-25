@@ -371,11 +371,12 @@ export default function Home() {
       {/* CTA */}
       <section id="get-started" className="py-14 sm:py-20 px-4 bg-brand-900 text-white text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-4xl font-black mb-4">
-            Stop Emailing the Wrong Coaches.
+          <h2 className="text-3xl sm:text-4xl font-black mb-4 leading-tight">
+            Stop Guessing. Start Contacting the Right Coaches.
           </h2>
-          <p className="text-blue-200 mb-2 text-lg">
-            Get your school list, your coach contacts, and your outreach emails — all in one place.
+          <p className="text-blue-100 mb-2 text-lg leading-relaxed">
+            RecruitOS gives you a clear recruiting plan, verified coach contacts,
+            and outreach emails you can actually use.
           </p>
           <p className="text-blue-400 text-sm mb-10">
             $20/month. Cancel anytime. No guesswork.
@@ -385,13 +386,13 @@ export default function Home() {
               href="/#pricing"
               className="bg-white text-brand-700 font-black px-10 py-4 rounded-xl text-lg hover:bg-blue-50 transition-colors"
             >
-              Get My Recruiting Plan →
+              Start Premium Plan →
             </Link>
             <Link
               href="/demo"
               className="border-2 border-white/60 text-white font-semibold px-10 py-4 rounded-xl text-lg hover:border-white hover:bg-white/10 transition-colors"
             >
-              See a Demo Profile
+              View Demo Profile
             </Link>
           </div>
         </div>
