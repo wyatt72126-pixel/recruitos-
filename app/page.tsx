@@ -394,13 +394,18 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6 items-start max-w-5xl mx-auto text-left">
             {/* Free Demo */}
             <div className="flex flex-col rounded-3xl border border-gray-200 bg-white p-7 shadow-sm">
-              <div className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-2">Free Demo</div>
+              <div className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-2">Free Demo Profile</div>
               <div className="flex items-baseline gap-1 mb-1">
                 <span className="text-4xl font-black text-gray-900">$0</span>
               </div>
-              <p className="text-gray-500 text-sm mb-6">See the full layout before you commit.</p>
-              <ul className="space-y-3 mb-8 flex-1 text-sm">
-                {["Profile preview", "Sample school matches", "Sample coach contacts", "Sample outreach email"].map((item) => (
+              <p className="text-gray-500 text-sm mb-5 leading-relaxed">Preview how RecruitOS works with sample data.</p>
+              <ul className="space-y-3 mb-4 flex-1 text-sm">
+                {[
+                  "Sample athlete profile",
+                  "Sample school recommendation layout",
+                  "Sample coach contact layout",
+                  "Sample outreach email format",
+                ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-gray-600">
                     <svg className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -409,6 +414,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
+              <p className="text-xs text-gray-400 mb-5 leading-relaxed">Personalized school matches and verified coach contacts are included with Premium.</p>
               <Link href="/demo" className="block w-full text-center bg-gray-100 text-gray-700 font-bold py-3.5 rounded-xl hover:bg-gray-200 transition-colors">
                 View Demo Profile
               </Link>
@@ -419,16 +425,16 @@ export default function Home() {
               <div className="text-sm font-bold uppercase tracking-widest text-brand-500 mb-2">Starter</div>
               <div className="flex items-baseline gap-0.5 mb-1">
                 <span className="text-4xl font-black text-gray-900">$9</span>
-                <span className="text-gray-500 font-medium">.99/mo</span>
+                <span className="text-gray-500 font-medium">.99/month</span>
               </div>
-              <p className="text-gray-500 text-sm mb-6">A real plan to start contacting coaches.</p>
-              <ul className="space-y-3 mb-8 flex-1 text-sm">
+              <p className="text-gray-500 text-sm mb-5 leading-relaxed">For athletes who want recruiting structure before upgrading to full research.</p>
+              <ul className="space-y-3 mb-4 flex-1 text-sm">
                 {[
-                  "20 school matches",
-                  "Verified coach contacts",
-                  "3 priority schools · 2 contacts each",
-                  "Copy-and-paste outreach emails",
-                  "Monthly recruiting updates",
+                  "Athlete profile",
+                  "Recruiting checklist",
+                  "General outreach email templates",
+                  "Monthly recruiting tips",
+                  "Profile organization",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-gray-700">
                     <svg className="w-4 h-4 text-brand-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -438,6 +444,7 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
+              <p className="text-xs text-gray-400 mb-5 leading-relaxed">Does not include personalized school matches or verified coach contacts.</p>
               <Link href="/onboarding" className="block w-full text-center bg-brand-600 text-white font-bold py-3.5 rounded-xl hover:bg-brand-700 transition-colors">
                 Start Starter Plan →
               </Link>
@@ -447,23 +454,24 @@ export default function Home() {
             <div className="relative flex flex-col rounded-3xl bg-brand-700 text-white p-7 shadow-xl ring-2 ring-brand-500 mt-4 md:mt-0">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                 <span className="inline-block bg-green-400 text-brand-900 text-xs font-black uppercase tracking-wide px-4 py-1.5 rounded-full shadow">
-                  Most popular
+                  Best for serious recruits
                 </span>
               </div>
-              <div className="text-sm font-bold uppercase tracking-widest text-blue-200 mb-2 mt-2">Premium</div>
+              <div className="text-sm font-bold uppercase tracking-widest text-blue-200 mb-2 mt-2">RecruitOS Premium</div>
               <div className="flex items-baseline gap-0.5 mb-1">
                 <span className="text-4xl font-black">$20</span>
-                <span className="text-blue-200 font-medium">/mo</span>
+                <span className="text-blue-200 font-medium">/month</span>
               </div>
-              <p className="text-blue-100 text-sm mb-6">The full plan — more schools, more contacts, more depth.</p>
+              <p className="text-blue-100 text-sm mb-5 leading-relaxed">For athletes ready for a real recruiting plan.</p>
               <ul className="space-y-3 mb-8 flex-1 text-sm">
                 {[
-                  "50 school matches",
-                  "Verified coach contacts",
-                  "5 priority schools · 3+ contacts each",
-                  "Copy-and-paste outreach emails",
-                  "Camp & junior day alerts",
-                  "Monthly strategy updates",
+                  "50 personalized school matches",
+                  "5 priority schools",
+                  "At least 3 verified coach contacts per priority school",
+                  "Verified emails and Twitter/X from official staff pages",
+                  "Personalized outreach emails",
+                  "Camp and junior day opportunity updates",
+                  "Monthly recruiting strategy updates",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
                     <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
