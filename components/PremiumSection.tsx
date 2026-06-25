@@ -53,9 +53,12 @@ export default function PremiumSection() {
         >
           Start Premium Plan →
         </Link>
-        <span className="text-blue-200 text-sm">
-          $20/month. Cancel anytime.
-        </span>
+        <div className="flex flex-col items-center sm:items-start gap-0.5">
+          <span className="text-blue-200 text-sm">$20/month. Cancel anytime.</span>
+          <Link href="/pricing" className="text-blue-300 text-xs hover:text-white transition-colors underline underline-offset-2">
+            Looking for Starter at $9.99/month? See all plans →
+          </Link>
+        </div>
       </div>
     </div>
   );

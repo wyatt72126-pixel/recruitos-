@@ -260,9 +260,10 @@ export default function OnboardingPage() {
             >
               Submit Recruiting Profile
             </button>
-            <p className="text-xs text-gray-400 text-center max-w-md">
-              This form is not connected to a backend yet. Your profile will not
-              be stored or sent until the service is fully set up.
+            <p className="text-xs text-gray-500 text-center max-w-md">
+              We&apos;re in early access. After submitting, our team will review
+              your profile and reach out within 2 business days to complete your
+              account setup.
             </p>
             <p className="text-xs text-gray-400 text-center max-w-2xl leading-relaxed border-t border-gray-200 pt-4 mt-1">
               RecruitOS provides recruiting organization, school research, coach

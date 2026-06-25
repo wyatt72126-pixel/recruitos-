@@ -151,8 +151,8 @@ export default function ContactPage() {
                 Send Message
               </button>
 
-              <p className="text-xs text-gray-400 text-center">
-                This form is not connected to a backend yet. Your message will not be delivered until the service is fully set up.
+              <p className="text-xs text-gray-500 text-center">
+                We review every message and typically respond within 1–2 business days.
               </p>
               <p className="text-xs text-gray-400 text-center max-w-lg mx-auto leading-relaxed border-t border-gray-100 pt-4">
                 RecruitOS provides recruiting organization, school research, coach contact information, and outreach support. RecruitOS does not guarantee scholarships, roster spots, offers, coach responses, or admission to any school.

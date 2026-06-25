@@ -103,6 +103,113 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Product Preview */}
+      <section className="py-14 sm:py-20 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <p className="text-sm font-bold uppercase tracking-widest text-brand-500 mb-3">What You Get</p>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
+              Your recruiting plan, in one place.
+            </h2>
+            <p className="text-gray-500 max-w-xl mx-auto">
+              School matches ranked by fit, verified coach contacts, and outreach emails ready to copy and send.
+            </p>
+          </div>
+
+          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+            {/* Mock profile header */}
+            <div className="bg-brand-900 text-white px-6 py-4 flex items-center justify-between gap-4 flex-wrap">
+              <div>
+                <div className="font-black text-lg">Jordan Mills — Class of 2026</div>
+                <div className="text-blue-200 text-sm mt-0.5">Wide Receiver · Marietta, GA · GPA 3.8 · 40-Yard 4.48s</div>
+              </div>
+              <span className="bg-yellow-400 text-yellow-900 text-xs font-black px-3 py-1 rounded-full">
+                Premium
+              </span>
+            </div>
+
+            {/* Stats strip */}
+            <div className="grid grid-cols-2 md:grid-cols-4 border-b border-gray-100 divide-x divide-gray-100">
+              {[
+                { label: "School Matches", value: "50" },
+                { label: "Priority Schools", value: "5" },
+                { label: "Coach Contacts", value: "17" },
+                { label: "Outreach Emails", value: "Ready" },
+              ].map((stat) => (
+                <div key={stat.label} className="px-5 py-4">
+                  <div className="text-xs text-gray-400 font-medium uppercase tracking-wide">{stat.label}</div>
+                  <div className="text-2xl font-black text-gray-900 mt-0.5">{stat.value}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Two-panel: matches + contacts */}
+            <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+              {/* School matches */}
+              <div className="p-6">
+                <div className="text-xs font-bold uppercase tracking-widest text-brand-500 mb-4">Top School Matches</div>
+                <div className="flex flex-col gap-2.5">
+                  {[
+                    { name: "Appalachian State", div: "FBS · Sun Belt", score: 94 },
+                    { name: "James Madison", div: "FBS · Sun Belt", score: 91 },
+                    { name: "Liberty University", div: "FBS · Independent", score: 88 },
+                    { name: "Coastal Carolina", div: "FBS · Sun Belt", score: 85 },
+                  ].map((s) => (
+                    <div key={s.name} className="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-3">
+                      <div>
+                        <div className="font-bold text-gray-900 text-sm">{s.name}</div>
+                        <div className="text-xs text-gray-400 mt-0.5">{s.div}</div>
+                      </div>
+                      <span className="bg-brand-600 text-white text-xs font-black px-2.5 py-1 rounded-full">
+                        {s.score}%
+                      </span>
+                    </div>
+                  ))}
+                  <p className="text-xs text-gray-400 text-center pt-1">+ 46 more matches in your full profile</p>
+                </div>
+              </div>
+
+              {/* Coach contacts */}
+              <div className="p-6">
+                <div className="text-xs font-bold uppercase tracking-widest text-brand-500 mb-4">Verified Coach Contacts</div>
+                <div className="flex flex-col gap-2.5">
+                  {[
+                    { name: "Shawn Clark", title: "Head Coach", school: "App State", email: "clarksc@appstate.edu" },
+                    { name: "Frank Ponce", title: "Offensive Coordinator", school: "App State", email: "poncef@appstate.edu" },
+                    { name: "Bob Wiesel", title: "Head Coach", school: "JMU", email: "wieselrw@jmu.edu" },
+                    { name: "Shane Montgomery", title: "Offensive Coordinator", school: "JMU", email: "montgosa@jmu.edu" },
+                  ].map((c) => (
+                    <div key={c.email} className="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-3 gap-3">
+                      <div className="min-w-0">
+                        <div className="font-bold text-gray-900 text-sm">{c.name}</div>
+                        <div className="text-xs text-gray-400 mt-0.5">{c.title} · {c.school}</div>
+                        <div className="text-xs text-gray-500 mt-0.5 truncate">{c.email}</div>
+                      </div>
+                      <div className="flex items-center gap-1 text-green-600 text-xs font-semibold flex-shrink-0">
+                        <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        Verified
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* CTA bar */}
+            <div className="bg-gray-50 border-t border-gray-100 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <p className="text-sm text-gray-500">
+                Contacts are pulled from official athletic staff pages — not scraped from databases.
+              </p>
+              <Link href="/demo" className="text-brand-600 font-bold text-sm hover:underline flex-shrink-0">
+                See the full demo profile →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why RecruitOS Is Different (Trust) */}
       <section className="py-14 sm:py-20 px-4 bg-brand-900 text-white">
         <div className="max-w-5xl mx-auto">
@@ -281,89 +388,100 @@ export default function Home() {
             Simple, Transparent Pricing
           </h2>
           <p className="text-gray-500 mb-14 max-w-xl mx-auto">
-            Start with a free demo profile, or get the full recruiting plan with Premium.
+            Start free, or jump straight into a plan. Both paid plans are month-to-month.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto text-left">
-            {/* Free Demo Profile */}
-            <div className="flex flex-col rounded-3xl border border-gray-200 bg-white p-8 md:p-10 shadow-sm">
-              <div className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-2">
-                Free Demo Profile
-              </div>
+          <div className="grid md:grid-cols-3 gap-6 items-start max-w-5xl mx-auto text-left">
+            {/* Free Demo */}
+            <div className="flex flex-col rounded-3xl border border-gray-200 bg-white p-7 shadow-sm">
+              <div className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-2">Free Demo</div>
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-5xl font-black text-gray-900">$0</span>
+                <span className="text-4xl font-black text-gray-900">$0</span>
               </div>
-              <p className="text-gray-500 mb-8">
-                See exactly what a RecruitOS profile looks like before you commit.
-              </p>
-              <ul className="space-y-4 mb-10 flex-1">
-                {[
-                  "Athlete profile preview",
-                  "Example school recommendations",
-                  "Sample coach contact layout",
-                  "Sample outreach email format",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-gray-700">
-                    <svg className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <p className="text-gray-500 text-sm mb-6">See the full layout before you commit.</p>
+              <ul className="space-y-3 mb-8 flex-1 text-sm">
+                {["Profile preview", "Sample school matches", "Sample coach contacts", "Sample outreach email"].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-gray-600">
+                    <svg className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span>{item}</span>
+                    {item}
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/demo"
-                className="block w-full text-center bg-gray-900 text-white font-bold text-lg py-4 rounded-xl hover:bg-gray-800 transition-colors"
-              >
+              <Link href="/demo" className="block w-full text-center bg-gray-100 text-gray-700 font-bold py-3.5 rounded-xl hover:bg-gray-200 transition-colors">
                 View Demo Profile
               </Link>
             </div>
 
-            {/* RecruitOS Premium */}
-            <div className="relative flex flex-col rounded-3xl bg-brand-700 text-white p-8 md:p-10 shadow-xl ring-2 ring-brand-500 mt-6 md:mt-0 md:scale-[1.03]">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="inline-block bg-green-400 text-brand-900 text-xs font-black uppercase tracking-wide px-4 py-1.5 rounded-full shadow">
-                  Best for serious recruits
-                </span>
+            {/* Starter */}
+            <div className="flex flex-col rounded-3xl border border-brand-200 bg-white p-7 shadow-sm">
+              <div className="text-sm font-bold uppercase tracking-widest text-brand-500 mb-2">Starter</div>
+              <div className="flex items-baseline gap-0.5 mb-1">
+                <span className="text-4xl font-black text-gray-900">$9</span>
+                <span className="text-gray-500 font-medium">.99/mo</span>
               </div>
-              <div className="text-sm font-bold uppercase tracking-widest text-blue-200 mb-2 mt-2">
-                RecruitOS Premium
-              </div>
-              <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-5xl font-black">$20</span>
-                <span className="text-blue-200 font-medium">/month</span>
-              </div>
-              <p className="text-blue-100 mb-8">
-                A real recruiting plan for athletes who are ready to reach out.
-              </p>
-              <ul className="space-y-4 mb-10 flex-1">
+              <p className="text-gray-500 text-sm mb-6">A real plan to start contacting coaches.</p>
+              <ul className="space-y-3 mb-8 flex-1 text-sm">
                 {[
-                  "50 personalized school matches",
-                  "Verified coach emails and Twitter/X contacts",
-                  "5 priority schools with at least 3 coach contacts each",
+                  "20 school matches",
+                  "Verified coach contacts",
+                  "3 priority schools · 2 contacts each",
                   "Copy-and-paste outreach emails",
-                  "Camp and junior day opportunity updates",
-                  "Monthly recruiting strategy updates",
+                  "Monthly recruiting updates",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <li key={item} className="flex items-start gap-2.5 text-gray-700">
+                    <svg className="w-4 h-4 text-brand-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span>{item}</span>
+                    {item}
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/onboarding"
-                className="block w-full text-center bg-white text-brand-700 font-black text-lg py-4 rounded-xl hover:bg-blue-50 transition-colors"
-              >
+              <Link href="/onboarding" className="block w-full text-center bg-brand-600 text-white font-bold py-3.5 rounded-xl hover:bg-brand-700 transition-colors">
+                Start Starter Plan →
+              </Link>
+            </div>
+
+            {/* Premium */}
+            <div className="relative flex flex-col rounded-3xl bg-brand-700 text-white p-7 shadow-xl ring-2 ring-brand-500 mt-4 md:mt-0">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span className="inline-block bg-green-400 text-brand-900 text-xs font-black uppercase tracking-wide px-4 py-1.5 rounded-full shadow">
+                  Most popular
+                </span>
+              </div>
+              <div className="text-sm font-bold uppercase tracking-widest text-blue-200 mb-2 mt-2">Premium</div>
+              <div className="flex items-baseline gap-0.5 mb-1">
+                <span className="text-4xl font-black">$20</span>
+                <span className="text-blue-200 font-medium">/mo</span>
+              </div>
+              <p className="text-blue-100 text-sm mb-6">The full plan — more schools, more contacts, more depth.</p>
+              <ul className="space-y-3 mb-8 flex-1 text-sm">
+                {[
+                  "50 school matches",
+                  "Verified coach contacts",
+                  "5 priority schools · 3+ contacts each",
+                  "Copy-and-paste outreach emails",
+                  "Camp & junior day alerts",
+                  "Monthly strategy updates",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link href="/onboarding" className="block w-full text-center bg-white text-brand-700 font-black py-3.5 rounded-xl hover:bg-blue-50 transition-colors">
                 Start Premium Plan →
               </Link>
             </div>
           </div>
 
-          <p className="text-gray-400 text-sm mt-8">
-            Cancel anytime. RecruitOS helps you reach coaches — it does not guarantee offers or scholarships.
+          <p className="text-gray-400 text-sm mt-8 text-center">
+            Cancel anytime. RecruitOS helps you reach coaches — it does not guarantee offers or scholarships.{" "}
+            <Link href="/pricing" className="text-brand-500 hover:underline">See full plan comparison →</Link>
           </p>
         </div>
       </section>
