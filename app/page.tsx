@@ -52,7 +52,7 @@ export default function Home() {
             How RecruitOS Works
           </h2>
           <p className="text-center text-gray-500 mb-14 max-w-xl mx-auto">
-            Three steps from where you are now to coaches reading your email.
+            Three steps: build your profile, get your matches and contacts, send your outreach.
           </p>
           <div className="grid gap-6 md:grid-cols-3">
             {[
@@ -69,7 +69,7 @@ export default function Home() {
               {
                 step: "Step 03",
                 title: "Send better outreach",
-                desc: "Get ready-to-send email templates and a clear plan for contacting coaches — so your first impression actually lands.",
+                desc: "Get outreach emails written around your profile and a clear order for who to contact first. Review it, make it yours, and send it.",
               },
             ].map((item) => (
               <div
@@ -114,9 +114,9 @@ export default function Home() {
               No Guessing. Just a Clear, Organized Plan.
             </h2>
             <p className="text-blue-100 leading-relaxed text-lg">
-              Most recruiting tools hand athletes a search bar and wish them
-              luck. RecruitOS does the work that actually matters — telling you
-              where to focus and giving you contact information you can trust.
+              Most recruiting tools hand you a search bar and leave the rest to
+              you. RecruitOS does the research instead — which schools fit, who
+              to contact, and what to send.
             </p>
           </div>
 
@@ -165,12 +165,12 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="max-w-2xl mx-auto text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
-              The Recruiting Process Is Broken for Most Athletes
+              Recruiting Is Confusing. It Doesn&apos;t Have to Be.
             </h2>
             <p className="text-gray-500 leading-relaxed">
-              You do not know which schools are realistic. You do not know which
-              coach handles recruiting for your position. And when you send a
-              cold email, it goes nowhere. RecruitOS fixes all three.
+              It&apos;s hard to know which schools are a realistic fit, who on
+              the staff to contact, or what to write. So most emails go to the
+              wrong person and never get a reply. RecruitOS handles all three.
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -178,7 +178,7 @@ export default function Home() {
               {
                 icon: "🎯",
                 title: "We Tell You Which Schools Fit",
-                desc: "No guessing. We match you to 50 programs based on your actual profile — athletically and academically. Every school on your list is there for a reason.",
+                desc: "We match you to 50 programs based on your profile — position, stats, GPA, size, and location. Every school on your list is there for a reason.",
               },
               {
                 icon: "📬",
@@ -193,7 +193,7 @@ export default function Home() {
               {
                 icon: "🏕️",
                 title: "Camp and Junior Day Alerts",
-                desc: "We notify you when your matched schools host camps or junior days — the events where coaches actually evaluate recruits in person.",
+                desc: "We let you know when your matched schools host camps or junior days — the events where coaches evaluate recruits in person.",
               },
             ].map((item) => (
               <div
@@ -223,8 +223,8 @@ export default function Home() {
               <p className="text-gray-500 leading-relaxed text-lg mb-6">
                 Recruiting gets confusing fast when a family doesn&apos;t know
                 which schools fit, who to contact, or what to say. RecruitOS
-                organizes the whole process into a clear monthly plan you can
-                actually follow — together.
+                organizes it into a clear monthly plan the whole family can
+                follow — together.
               </p>
               <a
                 href="#how-it-works"
@@ -375,8 +375,8 @@ export default function Home() {
             Stop Guessing. Start Contacting the Right Coaches.
           </h2>
           <p className="text-blue-100 mb-2 text-lg leading-relaxed">
-            RecruitOS gives you a clear recruiting plan, verified coach contacts,
-            and outreach emails you can actually use.
+            RecruitOS gives you a monthly recruiting plan, verified coach
+            contacts, and outreach emails ready to send.
           </p>
           <p className="text-blue-400 text-sm mb-10">
             $20/month. Cancel anytime. No guesswork.

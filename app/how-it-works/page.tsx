@@ -62,9 +62,9 @@ export default function HowItWorksPage() {
             From Profile to Coach Contacts in Four Steps
           </h1>
           <p className="text-gray-500 text-lg leading-relaxed">
-            RecruitOS is not a search tool. It is a structured process that
-            takes your profile and turns it into a clear, actionable recruiting
-            plan.
+            RecruitOS is not a search tool. It takes your profile and turns it
+            into a clear monthly recruiting plan — school matches, verified
+            coach contacts, and outreach you can send.
           </p>
         </div>
       </section>
