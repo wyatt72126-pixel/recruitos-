@@ -117,7 +117,7 @@ export default function PricingPage() {
               ))}
             </ul>
             <Link
-              href="/#get-started"
+              href="/onboarding"
               className="block w-full text-center bg-white text-brand-700 font-black text-lg py-4 rounded-xl hover:bg-blue-50 transition-colors"
             >
               Start Premium Plan →

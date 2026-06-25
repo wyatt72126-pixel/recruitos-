@@ -30,7 +30,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/#get-started"
+              href="/onboarding"
               className="bg-white text-brand-700 font-black px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors text-lg"
             >
               Build My Recruiting Plan →
@@ -88,7 +88,7 @@ export default function Home() {
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
             <Link
-              href="/#get-started"
+              href="/onboarding"
               className="bg-brand-600 text-white font-bold px-8 py-3.5 rounded-xl hover:bg-brand-700 transition-colors text-center"
             >
               Start Recruiting Plan →
@@ -354,7 +354,7 @@ export default function Home() {
                 ))}
               </ul>
               <Link
-                href="/#get-started"
+                href="/onboarding"
                 className="block w-full text-center bg-white text-brand-700 font-black text-lg py-4 rounded-xl hover:bg-blue-50 transition-colors"
               >
                 Start Premium Plan →
