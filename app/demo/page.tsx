@@ -51,17 +51,43 @@ export default function DemoPage() {
       {/* Main content */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 flex flex-col gap-10">
 
+        {/* Dashboard summary strip */}
+        <section>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: "School Matches", value: "5", sub: "of 50 in Premium" },
+              { label: "Priority Schools", value: "5", sub: "verified contacts" },
+              { label: "Coach Contacts", value: "15", sub: "3+ per school" },
+              { label: "Outreach Emails", value: "Ready", sub: "copy & send" },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="bg-white border border-gray-200 rounded-xl px-4 py-4"
+              >
+                <div className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                  {stat.label}
+                </div>
+                <div className="text-2xl font-black text-gray-900 mt-1">{stat.value}</div>
+                <div className="text-xs text-gray-400 mt-0.5">{stat.sub}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Top 5 school matches */}
         <section>
           <div className="flex items-center justify-between mb-5 flex-wrap gap-2">
             <div>
-              <h2 className="text-xl font-black text-gray-900">Your Top 5 School Matches</h2>
+              <span className="text-xs font-semibold uppercase tracking-widest text-brand-500">
+                Recommended Schools
+              </span>
+              <h2 className="text-xl font-black text-gray-900 mt-1">Your Top 5 School Matches</h2>
               <p className="text-sm text-gray-500 mt-0.5">
                 Recommended based on your stats, size, GPA, and location. Verified coach contacts included.
               </p>
             </div>
             <span className="text-xs text-gray-400 bg-white border border-gray-200 px-3 py-1.5 rounded-full">
-              Preview — 50 matches in full package
+              Preview — 50 matches in Premium
             </span>
           </div>
           <RecommendedSchools schools={schools} />
@@ -69,7 +95,12 @@ export default function DemoPage() {
 
         {/* Premium upsell */}
         <section>
-          <PremiumSection />
+          <span className="text-xs font-semibold uppercase tracking-widest text-brand-500">
+            Upgrade
+          </span>
+          <div className="mt-3">
+            <PremiumSection />
+          </div>
         </section>
 
       </div>
