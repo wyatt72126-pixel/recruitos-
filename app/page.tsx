@@ -5,27 +5,41 @@ export default function Home() {
     <main>
       {/* Hero */}
       <section className="bg-gradient-to-br from-brand-900 to-brand-600 text-white py-24 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-tight mb-6">
-            We Find Your Schools.<br />You Focus on the Game.
-          </h1>
-          <p className="text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-10">
-            RecruitOS analyzes your film, stats, and academic profile — then
-            gives you a personalized list of college matches with the exact
-            coach contacts to reach them.
+        <div className="max-w-3xl mx-auto text-center">
+          {/* Trust line */}
+          <p className="text-sm font-semibold uppercase tracking-widest text-blue-300 mb-6">
+            Your monthly college recruiting assistant
           </p>
+
+          <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight mb-6">
+            Know Which Schools Fit.<br />
+            Know Who to Contact.<br />
+            Know What to Say.
+          </h1>
+
+          <p className="text-lg md:text-xl text-blue-100 max-w-xl mx-auto mb-4 leading-relaxed">
+            Most athletes spend months emailing the wrong coaches at the wrong
+            schools — and never hear back. RecruitOS gives you a clear plan:
+            the right programs, verified coach contacts, and outreach emails
+            written for you.
+          </p>
+
+          <p className="text-sm text-blue-300 mb-10">
+            Every contact is pulled directly from the official athletic staff page — not guessed.
+          </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/demo"
-              className="bg-white text-brand-700 font-bold px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors text-lg"
+              href="/#get-started"
+              className="bg-white text-brand-700 font-black px-8 py-4 rounded-xl hover:bg-blue-50 transition-colors text-lg"
             >
-              See a Demo Profile
+              Get My Recruiting Plan →
             </Link>
             <Link
-              href="/#get-started"
-              className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white hover:text-brand-700 transition-colors text-lg"
+              href="/demo"
+              className="border-2 border-white/60 text-white font-semibold px-8 py-4 rounded-xl hover:border-white hover:bg-white/10 transition-colors text-lg"
             >
-              Get My Matches
+              See a Demo Profile
             </Link>
           </div>
         </div>
@@ -35,27 +49,28 @@ export default function Home() {
       <section id="how-it-works" className="py-20 px-4 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-black text-center text-gray-900 mb-4">
-            How RecruitOS Works
+            Here is Exactly What You Get
           </h2>
           <p className="text-center text-gray-500 mb-14 max-w-xl mx-auto">
-            No guesswork. No cold searching. We do the legwork so you show up prepared.
+            RecruitOS is not a profile builder. It is a monthly recruiting
+            assistant that tells you who to contact, where to go, and what to say.
           </p>
           <div className="grid md:grid-cols-3 gap-10">
             {[
               {
                 step: "01",
-                title: "Submit Your Profile",
-                desc: "Share your stats, GPA, film link, and position. Takes 5 minutes.",
+                title: "Your School List",
+                desc: "We match you to 50 programs based on your sport, stats, GPA, and size preference — schools that are a realistic fit, not a wishlist.",
               },
               {
                 step: "02",
-                title: "We Build Your List",
-                desc: "Our team identifies 50 college programs that match your level, size preference, and academic needs.",
+                title: "Verified Coach Contacts",
+                desc: "For your top 5 schools, we pull the actual coach emails and Twitter/X handles from the official athletic staff page. At least 3 contacts per school.",
               },
               {
                 step: "03",
-                title: "You Get Verified Contacts",
-                desc: "For your top 5 matches, we deliver real coach emails and Twitter/X handles — pulled directly from official athletic staff pages.",
+                title: "Outreach Written for You",
+                desc: "Every coach contact comes with a personalized email you can copy and send. No writing from scratch. No wondering if it sounds right.",
               },
             ].map((item) => (
               <div key={item.step} className="flex flex-col gap-3">
@@ -70,33 +85,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Value Props */}
+      {/* Problem / Value Props */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-black text-center text-gray-900 mb-14">
-            Why Athletes Choose RecruitOS
-          </h2>
+          <div className="max-w-2xl mx-auto text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
+              The Recruiting Process Is Broken for Most Athletes
+            </h2>
+            <p className="text-gray-500 leading-relaxed">
+              You do not know which schools are realistic. You do not know which
+              coach handles recruiting for your position. And when you send a
+              cold email, it goes nowhere. RecruitOS fixes all three.
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
                 icon: "🎯",
-                title: "We Recommend the Schools",
-                desc: "Athletes don't pick blindly off a list. We analyze fit and surface programs that are realistically within reach and worth your time.",
+                title: "We Tell You Which Schools Fit",
+                desc: "No guessing. We match you to 50 programs based on your actual profile — athletically and academically. Every school on your list is there for a reason.",
               },
               {
                 icon: "📬",
-                title: "Verified Coach Contacts",
-                desc: "Every email and Twitter/X handle is sourced from the school's official athletic staff directory — not guessed, not scraped.",
+                title: "Contacts Pulled From Official Staff Pages",
+                desc: "We source every email and Twitter/X handle directly from the school's official athletic staff directory. If a contact is missing, we find a different coach on the same staff.",
               },
               {
                 icon: "✉️",
-                title: "Ready-to-Send Emails",
-                desc: "Each coach contact comes with a personalized outreach email you can copy and send immediately.",
+                title: "Outreach Emails Ready to Copy",
+                desc: "Each coach gets a personalized email written around your profile. Copy it, paste it, send it. No blank page.",
               },
               {
                 icon: "🏕️",
-                title: "Camp & Event Alerts",
-                desc: "Premium members get notified about camps, junior days, and recruiting opportunities at their matched schools.",
+                title: "Camp and Junior Day Alerts",
+                desc: "We notify you when your matched schools host camps or junior days — the events where coaches actually evaluate recruits in person.",
               },
             ].map((item) => (
               <div
@@ -157,16 +179,29 @@ export default function Home() {
       {/* CTA */}
       <section id="get-started" className="py-20 px-4 bg-brand-900 text-white text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-4xl font-black mb-4">Ready to Get Recruited?</h2>
-          <p className="text-blue-200 mb-8 text-lg">
-            Join athletes who stopped guessing and started getting responses.
+          <h2 className="text-4xl font-black mb-4">
+            Stop Emailing the Wrong Coaches.
+          </h2>
+          <p className="text-blue-200 mb-2 text-lg">
+            Get your school list, your coach contacts, and your outreach emails — all in one place.
           </p>
-          <Link
-            href="/demo"
-            className="inline-block bg-white text-brand-700 font-black px-10 py-4 rounded-xl text-lg hover:bg-blue-50 transition-colors"
-          >
-            See a Demo Profile First →
-          </Link>
+          <p className="text-blue-400 text-sm mb-10">
+            One-time payment. No subscription. No guesswork.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/#pricing"
+              className="bg-white text-brand-700 font-black px-10 py-4 rounded-xl text-lg hover:bg-blue-50 transition-colors"
+            >
+              Get My Recruiting Plan →
+            </Link>
+            <Link
+              href="/demo"
+              className="border-2 border-white/60 text-white font-semibold px-10 py-4 rounded-xl text-lg hover:border-white hover:bg-white/10 transition-colors"
+            >
+              See a Demo Profile
+            </Link>
+          </div>
         </div>
       </section>
 
