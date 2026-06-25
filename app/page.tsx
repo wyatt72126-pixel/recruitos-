@@ -103,6 +103,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why RecruitOS Is Different (Trust) */}
+      <section className="py-20 px-4 bg-brand-900 text-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="max-w-2xl mb-14">
+            <p className="text-sm font-bold uppercase tracking-widest text-blue-300 mb-3">
+              Why RecruitOS Is Different
+            </p>
+            <h2 className="text-3xl md:text-4xl font-black leading-tight mb-4">
+              No Guessing. Just a Clear, Organized Plan.
+            </h2>
+            <p className="text-blue-100 leading-relaxed text-lg">
+              Most recruiting tools hand athletes a search bar and wish them
+              luck. RecruitOS does the work that actually matters — telling you
+              where to focus and giving you contact information you can trust.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
+            {[
+              {
+                title: "We don't let athletes guess",
+                desc: "You won't be left scrolling through a giant list of schools hoping something sticks. We point you to programs worth your time.",
+              },
+              {
+                title: "Recommendations based on real fit",
+                desc: "Every school we recommend is matched on fit, level, location, academics, and opportunity — not just name recognition.",
+              },
+              {
+                title: "Contacts from official staff pages",
+                desc: "Coach emails and Twitter/X handles are pulled directly from each school's official athletic staff page.",
+              },
+              {
+                title: "A backup when a contact is missing",
+                desc: "If a coach's contact information isn't available, we use a different staff member from the same official page so you always have a way in.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="flex items-start gap-4">
+                <svg className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <div>
+                  <h3 className="text-lg font-bold mb-1">{item.title}</h3>
+                  <p className="text-blue-100 leading-relaxed">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-blue-300 text-sm mt-14 max-w-2xl border-t border-white/10 pt-6">
+            RecruitOS organizes your outreach and gives you verified contact
+            information. We don't guarantee scholarships or offers, and we don't
+            claim a personal relationship with any coach — the decision to
+            respond is always the coach's.
+          </p>
+        </div>
+      </section>
+
       {/* Problem / Value Props */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-5xl mx-auto">
