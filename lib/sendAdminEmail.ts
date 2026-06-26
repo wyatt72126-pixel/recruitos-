@@ -18,7 +18,8 @@ export async function sendAdminEmail(
 ): Promise<{ success: boolean; error?: string }> {
   // Validate all required env vars upfront — fail loudly with exact names
   const missing: string[] = [];
-  if (!process.env.RESEND_API_KEY) missing.push("RESEND_API_KEY");
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey || apiKey === "re_PASTE_YOUR_KEY_HERE") missing.push("RESEND_API_KEY");
   if (!process.env.RECRUITOS_ADMIN_EMAIL) missing.push("RECRUITOS_ADMIN_EMAIL");
   if (!process.env.RECRUITOS_FROM_EMAIL) missing.push("RECRUITOS_FROM_EMAIL");
   if (!process.env.NEXT_PUBLIC_APP_URL) missing.push("NEXT_PUBLIC_APP_URL");
