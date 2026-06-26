@@ -145,3 +145,5 @@ vite.config.ts.timestamp-*
 # RecruitOS local database
 data/recruitos.db
 data/*.db
+data/*.db-shm
+data/*.db-wal
