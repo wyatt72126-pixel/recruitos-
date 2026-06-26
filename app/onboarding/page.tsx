@@ -87,39 +87,58 @@ function Section({
 }
 
 export default function OnboardingPage() {
-  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitResult, setSubmitResult] = useState<{
+    success: boolean;
+    id?: string;
+    emailSent?: boolean;
+    emailError?: string | null;
+    error?: string;
+  } | null>(null);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // ─────────────────────────────────────────────────────────────
-    // BACKEND INTEGRATION POINT
-    // No backend is connected yet. When one exists, collect the form
-    // values here (e.g. with FormData) and POST them to your API or
-    // form handler. Until then we only show a front-end success state.
-    //
-    //   const data = Object.fromEntries(new FormData(e.target as HTMLFormElement));
-    //   await fetch("/api/onboarding", { method: "POST", body: JSON.stringify(data) });
-    // ─────────────────────────────────────────────────────────────
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setSubmitting(true);
+
+    const data = Object.fromEntries(new FormData(e.currentTarget));
+
+    try {
+      const res = await fetch("/api/onboarding", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      setSubmitResult(json);
+    } catch (err) {
+      setSubmitResult({ success: false, error: String(err) });
+    } finally {
+      setSubmitting(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   }
 
-  if (submitted) {
+  if (submitResult?.success) {
     return (
       <main className="bg-gray-50 min-h-screen flex items-center justify-center px-4 py-20">
-        <div className="bg-white border border-gray-200 rounded-2xl p-10 sm:p-14 text-center shadow-sm max-w-lg">
+        <div className="bg-white border border-gray-200 rounded-2xl p-10 sm:p-14 text-center shadow-sm max-w-lg w-full">
           <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-5">
             <svg className="w-7 h-7 text-green-600" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
           </div>
           <h1 className="text-2xl font-black text-gray-900 mb-3">Recruiting profile received</h1>
-          <p className="text-gray-500 leading-relaxed mb-8">
+          <p className="text-gray-500 leading-relaxed mb-4">
             Thanks for submitting your profile. Once your account is active,
             we&apos;ll build your school matches and verified coach contacts and
             send them to your email.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          {submitResult.emailError && (
+            <p className="text-xs text-amber-600 bg-amber-50 border border-amber-200 rounded-lg px-4 py-3 mb-4">
+              Note: confirmation email could not be sent ({submitResult.emailError}). Your profile was saved successfully.
+            </p>
+          )}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-4">
             <Link href="/demo" className="bg-brand-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-brand-700 transition-colors">
               View a Demo Profile
             </Link>
@@ -127,6 +146,23 @@ export default function OnboardingPage() {
               Back to Home
             </Link>
           </div>
+        </div>
+      </main>
+    );
+  }
+
+  if (submitResult && !submitResult.success) {
+    return (
+      <main className="bg-gray-50 min-h-screen flex items-center justify-center px-4 py-20">
+        <div className="bg-white border border-red-200 rounded-2xl p-10 sm:p-14 text-center shadow-sm max-w-lg w-full">
+          <h1 className="text-xl font-black text-red-700 mb-3">Submission failed</h1>
+          <p className="text-gray-600 text-sm mb-4">{submitResult.error ?? "An unexpected error occurred."}</p>
+          <button
+            onClick={() => setSubmitResult(null)}
+            className="bg-brand-600 text-white font-bold px-6 py-3 rounded-xl hover:bg-brand-700 transition-colors"
+          >
+            Try Again
+          </button>
         </div>
       </main>
     );
@@ -153,8 +189,9 @@ export default function OnboardingPage() {
       {/* Form */}
       <section className="py-12 sm:py-16 px-4">
         <form onSubmit={handleSubmit} className="max-w-3xl mx-auto flex flex-col gap-8">
+
           {/* 1. Athlete Info */}
-          <Section number="1" title="Athlete Info" description="Who the athlete is and how to reach the family.">
+          <Section number="1" title="Athlete Info" description="Who the athlete is and how to reach them.">
             <div className="grid sm:grid-cols-2 gap-5">
               <Field label="Athlete first name" htmlFor="firstName" required>
                 <input id="firstName" name="firstName" type="text" required placeholder="Jordan" className={inputClass} />
@@ -162,22 +199,32 @@ export default function OnboardingPage() {
               <Field label="Athlete last name" htmlFor="lastName" required>
                 <input id="lastName" name="lastName" type="text" required placeholder="Mills" className={inputClass} />
               </Field>
-              <Field label="Email" htmlFor="email" required>
+              <Field label="Athlete email" htmlFor="email" required>
                 <input id="email" name="email" type="email" required placeholder="athlete@example.com" className={inputClass} />
               </Field>
-              <Field label="Phone number" htmlFor="phone" required>
+              <Field label="Athlete phone" htmlFor="phone" required>
                 <input id="phone" name="phone" type="tel" required placeholder="(555) 123-4567" className={inputClass} />
               </Field>
-              <div className="sm:col-span-2">
-                <Field label="Parent/guardian email" htmlFor="parentEmail" required>
-                  <input id="parentEmail" name="parentEmail" type="email" required placeholder="parent@example.com" className={inputClass} />
-                </Field>
-              </div>
             </div>
           </Section>
 
-          {/* 2. Academic Info */}
-          <Section number="2" title="Academic Info" description="Grades and school details coaches ask about first.">
+          {/* 2. Parent / Guardian Info */}
+          <Section number="2" title="Parent / Guardian Info" description="Contact info for the parent or guardian.">
+            <div className="grid sm:grid-cols-2 gap-5">
+              <Field label="Parent/guardian name" htmlFor="parentName" required>
+                <input id="parentName" name="parentName" type="text" required placeholder="Jane Mills" className={inputClass} />
+              </Field>
+              <Field label="Parent/guardian email" htmlFor="parentEmail" required>
+                <input id="parentEmail" name="parentEmail" type="email" required placeholder="parent@example.com" className={inputClass} />
+              </Field>
+              <Field label="Parent/guardian phone" htmlFor="parentPhone" required>
+                <input id="parentPhone" name="parentPhone" type="tel" required placeholder="(555) 987-6543" className={inputClass} />
+              </Field>
+            </div>
+          </Section>
+
+          {/* 3. Academic Info */}
+          <Section number="3" title="Academic Info" description="Grades and school details coaches ask about first.">
             <div className="grid sm:grid-cols-2 gap-5">
               <Field label="Graduation year" htmlFor="gradYear" required>
                 <select id="gradYear" name="gradYear" required defaultValue="" className={selectClass}>
@@ -187,6 +234,9 @@ export default function OnboardingPage() {
               </Field>
               <Field label="High school" htmlFor="highSchool" required>
                 <input id="highSchool" name="highSchool" type="text" required placeholder="Marietta High School" className={inputClass} />
+              </Field>
+              <Field label="City" htmlFor="city" required>
+                <input id="city" name="city" type="text" required placeholder="Marietta" className={inputClass} />
               </Field>
               <Field label="State" htmlFor="state" required>
                 <select id="state" name="state" required defaultValue="" className={selectClass}>
@@ -206,8 +256,8 @@ export default function OnboardingPage() {
             </div>
           </Section>
 
-          {/* 3. Football Info */}
-          <Section number="3" title="Football Info" description="Position, measurables, and film coaches will evaluate.">
+          {/* 4. Football Info */}
+          <Section number="4" title="Football Info" description="Position, measurables, and film coaches will evaluate.">
             <div className="grid sm:grid-cols-2 gap-5">
               <Field label="Position" htmlFor="position" required>
                 <select id="position" name="position" required defaultValue="" className={selectClass}>
@@ -229,11 +279,21 @@ export default function OnboardingPage() {
               <Field label="Twitter/X profile link" htmlFor="twitter">
                 <input id="twitter" name="twitter" type="url" placeholder="https://x.com/yourhandle" className={inputClass} />
               </Field>
+              <div className="sm:col-span-2">
+                <Field label="Stats" htmlFor="stats" hint="Key stats from last season (e.g. 48 rec, 720 yds, 9 TDs).">
+                  <textarea id="stats" name="stats" rows={3} placeholder="48 receptions, 720 yards, 9 touchdowns — 2024 season" className={inputClass + " resize-none"} />
+                </Field>
+              </div>
+              <div className="sm:col-span-2">
+                <Field label="Awards / honors" htmlFor="awards" hint="All-state, all-region, team awards, etc.">
+                  <textarea id="awards" name="awards" rows={3} placeholder="2024 All-State 5A, 2023 All-Region, Team MVP…" className={inputClass + " resize-none"} />
+                </Field>
+              </div>
             </div>
           </Section>
 
-          {/* 4. Recruiting Goals */}
-          <Section number="4" title="Recruiting Goals" description="What you're looking for so we can match the right schools.">
+          {/* 5. Recruiting Goals */}
+          <Section number="5" title="Recruiting Goals" description="What you're looking for so we can match the right schools.">
             <div className="grid sm:grid-cols-2 gap-5">
               <Field label="Preferred college level" htmlFor="level" required>
                 <select id="level" name="level" required defaultValue="" className={selectClass}>
@@ -245,8 +305,13 @@ export default function OnboardingPage() {
                 <input id="location" name="location" type="text" placeholder="Southeast, within 6 hours, no preference…" className={inputClass} />
               </Field>
               <div className="sm:col-span-2">
-                <Field label="Notes/goals" htmlFor="notes" hint="Anything else we should know — target schools, priorities, timeline.">
-                  <textarea id="notes" name="notes" rows={5} placeholder="Tell us about your recruiting goals…" className={inputClass + " resize-none"} />
+                <Field label="Recruiting goals" htmlFor="recruitingGoals" hint="What are you looking for in a program?">
+                  <textarea id="recruitingGoals" name="recruitingGoals" rows={4} placeholder="Playing time opportunity, strong business program, warm climate, D1 scholarship…" className={inputClass + " resize-none"} />
+                </Field>
+              </div>
+              <div className="sm:col-span-2">
+                <Field label="Additional notes" htmlFor="notes" hint="Target schools, timeline, anything else we should know.">
+                  <textarea id="notes" name="notes" rows={4} placeholder="I have interest from a few smaller programs already. Looking to expand to mid-majors…" className={inputClass + " resize-none"} />
                 </Field>
               </div>
             </div>
@@ -256,9 +321,10 @@ export default function OnboardingPage() {
           <div className="flex flex-col items-center gap-3">
             <button
               type="submit"
-              className="w-full sm:w-auto bg-brand-600 text-white font-black px-12 py-4 rounded-xl hover:bg-brand-700 transition-colors text-lg"
+              disabled={submitting}
+              className="w-full sm:w-auto bg-brand-600 text-white font-black px-12 py-4 rounded-xl hover:bg-brand-700 transition-colors text-lg disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Submit Recruiting Profile
+              {submitting ? "Submitting…" : "Submit Recruiting Profile"}
             </button>
             <p className="text-xs text-gray-500 text-center max-w-md">
               We&apos;re in early access. After submitting, our team will review
